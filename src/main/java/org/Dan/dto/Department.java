@@ -11,13 +11,9 @@ public class Department {
 
     @Override
     public String toString() {
-        if (nextId <= 5) {
-            return "Add department Department(" +
+            return "Department(" +
                     "id='" + id + '\'' +
                     ", departmentName='" + departmentName + '\'' +
-                    ')' + " successfully.";
-        } else{
-            return String.format("Max department reached, add a new department failed.");
-        }
+                    ')';
     }
 }
