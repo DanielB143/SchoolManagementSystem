@@ -198,56 +198,5 @@ public class SchoolManagementSystem {
             System.out.println("Cannot find any student match with studentId " + studentId + ", register course for " +
                        "student " + studentId + " failed.");
         }
-
-//        for(Student s : students){
-//           if(s.getId().equals(studentId)){
-//                for(Course c : courses){
-//                    if(c.getId().equals(courseId)){
-//                       if(s.getCourseNum() <= 5){
-//                            if(c.getStudentNum() <= 5){
-//                                for(Student student : c.getStudents()){
-//                                    if(student.getId().equals(studentId)){
-//                                        System.out.println("Student " + studentId + " has already registered Course "
-//                                                + courseId + ", register course " + courseId + " for student "
-//                                                + studentId + " failed.");
-//                                    }else{
-//                                        Student courseStudent = findStudent(studentId);
-//                                        Course course  = findCourse(courseId);
-//                                        Student[] courseStudents = course.getStudents();
-//                                        int registeredStudents = course.getStudentNum();
-//                                        Course[] studentCourses = courseStudent.getCourses();
-//                                        int registeredCourses = courseStudent.getCourseNum();
-//
-//                                        courseStudents[registeredStudents] = courseStudent;
-//                                        course.setStudents(courseStudents);
-//
-//                                        studentCourses[registeredCourses] = course;
-//                                        courseStudent.setCourses(studentCourses);
-//
-//                                        System.out.println("Latest student info:");
-//                                        System.out.println(courseStudent);
-//
-//                                        System.out.println("Latest course info:");
-//                                        System.out.println(course);
-//                                    }
-//                                }
-//                            }else{
-//                                System.out.println("Course " + courseId + " has been fully registered, register course "
-//                                        + courseId + " for student " + studentId + " failed.");
-//                            }
-//                        }else{
-//                           System.out.println("Student " + studentId + " has already registered 5 courses, register " +
-//                                   "course for student " + studentId + " failed.");
-//                        }
-//                    }else{
-//                        System.out.println("Cannot find any student match with courseId " + courseId + ", register " +
-//                                "course for student " + studentId + " failed.");
-//                    }
-//                }
-//            }else{
-//               System.out.println("Cannot find any student match with studentId " + studentId + ", register course for " +
-//                       "student " + studentId + " failed.");
-//            }
-//        }
     }
 }
