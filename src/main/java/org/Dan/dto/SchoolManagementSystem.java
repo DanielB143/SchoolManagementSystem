@@ -13,6 +13,10 @@ public class SchoolManagementSystem {
         this.name = name;
     }
 
+    /**
+     * allows to add a new department to the school system
+     * @param departName the name of the department to add
+     */
     public void addDepartment(String departName) {
         int counter = Department.nextId;
 
@@ -24,6 +28,9 @@ public class SchoolManagementSystem {
         }
     }
 
+    /**
+     * Allows to print all the departments that are null
+     */
     public void printDepartments() {
         System.out.println("Teh departments are: ");
         for (Department d : departments) {
@@ -33,6 +40,11 @@ public class SchoolManagementSystem {
         }
     }
 
+    /**
+     * Find the department knowing its id
+     * @param id the id of the department that we are looking for
+     * @return the department if it exists or null if it doesn't
+     */
     public Department findDepartment(String id) {
         for (Department d : departments) {
             if (id.equals(d.getId())) {
@@ -42,6 +54,12 @@ public class SchoolManagementSystem {
         return null;
     }
 
+    /**
+     * Adds a new student to the School system with a full name an unique id, and a department assigned to the student
+     * @param fName student's first name
+     * @param lName Student's last name
+     * @param departId department to which the student is assigned
+     */
     public void addStudent(String fName, String lName, String departId) {
         int counter = Student.nextId;
 
@@ -53,6 +71,9 @@ public class SchoolManagementSystem {
         }
     }
 
+    /**
+     * Prints all the students that are registered to the school
+     */
     public void printStudents() {
         System.out.println("The students are: ");
         for (Student s : students) {
@@ -62,6 +83,11 @@ public class SchoolManagementSystem {
         }
     }
 
+    /**
+     * Finds a student accordingly to its id
+     * @param studentId id of the student we want to find
+     * @return the student if exists or null if he doesn't
+     */
     public Student findStudent(String studentId) {
         for (Student s : students) {
             if (studentId.equals(s.getId())) {
@@ -71,6 +97,12 @@ public class SchoolManagementSystem {
         return null;
     }
 
+    /**
+     * Adds a teacher to the school system with an unique id, full name and the department assigned
+     * @param fName teacher's first name
+     * @param lName teacher's last name
+     * @param departId department to which he is assigned
+     */
     public void addTeacher(String fName, String lName, String departId) {
         int counter = Teacher.nextId;
 
@@ -82,6 +114,9 @@ public class SchoolManagementSystem {
         }
     }
 
+    /**
+     * Prints all teachers registered in the school
+     */
     public void printTeachers() {
         System.out.println("The teachers are: ");
         for (Teacher t : teachers) {
@@ -91,6 +126,11 @@ public class SchoolManagementSystem {
         }
     }
 
+    /**
+     * Find a teacher knowing the teacher's id
+     * @param teacherId teacher's id
+     * @return Teacher with all the personal information
+     */
     public Teacher findTeacher(String teacherId) {
         for (Teacher t : teachers) {
             if (teacherId.equals(t.getId())) {
@@ -100,6 +140,12 @@ public class SchoolManagementSystem {
         return null;
     }
 
+    /**
+     * Adda a new course to the school system with an unique id, a name, the credits worth and the department assigned
+     * @param courseName name of the course
+     * @param credit worth of the course
+     * @param departId department attributed to
+     */
     public void addCourse(String courseName, double credit, String departId) {
         int counter = Course.nextId;
 
@@ -111,6 +157,9 @@ public class SchoolManagementSystem {
         }
     }
 
+    /**
+     * Prints all courses registered in the school
+     */
     public void printCourses() {
         System.out.println("The courses are: ");
         for (Course c : courses) {
@@ -120,6 +169,11 @@ public class SchoolManagementSystem {
         }
     }
 
+    /**
+     * Finds the course knowing its id
+     * @param courseId course's unique id
+     * @return the course with all the information about it
+     */
     public Course findCourse(String courseId) {
         for (Course c : courses) {
             if (courseId.equals(c.getId())) {
@@ -129,6 +183,11 @@ public class SchoolManagementSystem {
         return null;
     }
 
+    /**
+     * changes the teacher responsible for the course
+     * @param teacherId id of the teacher to take in charge
+     * @param courseId id of the course to change
+     */
     public void modifyCourseTeacher(String teacherId, String courseId) {
         Course course = findCourse(courseId);
         Teacher teacher = findTeacher(teacherId);
@@ -147,6 +206,11 @@ public class SchoolManagementSystem {
         }
     }
 
+    /**
+     * Attributes a student to a course and verifies if the student can join it or no
+     * @param studentId student's unique id
+     * @param courseId id of the course where the student is gonna be added
+     */
     public void registerCourse(String studentId, String courseId) {
         Student student = findStudent(studentId);
         Course course = findCourse(courseId);

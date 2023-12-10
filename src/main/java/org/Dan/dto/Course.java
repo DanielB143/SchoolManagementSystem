@@ -30,7 +30,7 @@ public class Course {
         studentNum = 0;
         for (Student s : students) {
             if (s != null) {
-                studentList += s.getFname() + s.getLname() + ", ";
+                studentList += s.getFname() + " " + s.getLname() + ", ";
                 studentNum++;
             }
         }
@@ -49,7 +49,7 @@ public class Course {
                 "id='" + id + '\'' +
                 ", courseName='" + courseName + '\'' +
                 ", credit=" + credit +
-                ", teacher=" + teacher.getFname() + teacher.getLname() +
+                ", teacher=" + teacher.getFname() + " " + teacher.getLname() +
                 ", department=" + department.getDepartmentName() +
                 ", students=[" + studentList + ']' +
                 '}';
